@@ -1,0 +1,151 @@
+@import url('https://fonts.cdnfonts.com/css/pt-sans-2');
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Navbar should have the highest z-index */
+nav {
+  z-index: 50;
+  position: relative;
+  background-color: white;
+}
+
+.nav-item.active {
+  font-weight: bold;
+  color: #319795;
+}
+.nav-item:hover {
+  color: #319795;
+}
+.block.active {
+  font-weight: bold;
+  color: #319795;
+}
+.block:hover {
+  color: #319795;
+}
+
+#mobileMenu {
+  position: fixed;
+  margin-top: 70px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 40;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: auto; /* Allow scrolling if content overflows */
+  max-height: 100%; /* Ensure full height */
+  transition: max-height 0.3s ease-in-out;
+}
+
+/* Hero Section */
+.hero {
+  background-image: url('/Hero.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  min-height: 60vh;
+  height: 80vh;
+  display: flex;
+  flex-direction: column; /* Stack elements vertically by default */
+  justify-content: center; /* Center content vertically */
+  padding: 20px;
+}
+
+.hero .overlay {
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.hero .herotext {
+  position: relative;
+  z-index: 20;
+  max-width: 700px;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Center text */
+}
+
+.hero .statistics {
+  position: relative;
+  margin-top: 20px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 30px;
+  width: auto;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-around;
+  text-align: center; /* Center text */
+  flex-wrap: nowrap; /* Prevent wrapping on small screens */
+}
+
+/* Media Queries for larger screens */
+@media (min-width: 768px) {
+  .hero {
+    flex-direction: row; /* Align elements side by side on medium and larger screens */
+    padding: 40px;
+  }
+  
+  .hero .herotext {
+    margin-left: 0;
+    margin-right: 15px;
+    text-align: left;
+  }
+
+  .hero .statistics {
+    position: absolute;
+    bottom: 180px;
+    left: 28%;
+    transform: translateX(-50%);
+    width: 50%;
+    max-width: 100%;
+    padding: 30px;
+    display: flex; /* Ensure flexbox is applied */
+    flex-direction: row; /* Keep items in a row */
+    justify-content: space-between; /* Space items evenly */
+    flex-wrap: nowrap; /* Prevent wrapping */
+  }
+
+  .hero .statistics div {
+    margin: 0;
+    flex: 1; /* Allow items to grow and shrink */
+    max-width: 200px; /* Optional: limit max-width for consistency */
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    height: 100vh;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    padding: 10px; /* Reduce padding */
+  }
+  
+  .hero .herotext {
+    padding: 10px; /* Reduce padding */
+  }
+  
+  .hero .statistics {
+    margin-top: 10px; /* Reduce margin */
+    flex-direction: row; /* Keep items in a row */
+    flex-wrap: wrap; /* Allow wrapping on very small screens */
+  }
+  
+  .hero .statistics div {
+    margin: 5px; /* Ensure spacing between items */
+    flex: 1 1 30%; /* Allow items to grow and shrink */
+  }
+}
