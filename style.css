@@ -1,14 +1,17 @@
-@import url('https://fonts.cdnfonts.com/css/pt-sans-2');
+@import url("https://fonts.cdnfonts.com/css/pt-sans-2");
+@import url('https://fonts.cdnfonts.com/css/alice-2');
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 /* Navbar should have the highest z-index */
 nav {
-  z-index: 50;
+  z-index: 200;
   position: relative;
   background-color: white;
+  overflow: hidden;
 }
 
 .nav-item.active {
@@ -18,12 +21,18 @@ nav {
 .nav-item:hover {
   color: #319795;
 }
+.logo-Text{
+  font-family: 'Alice';
+}
 .block.active {
   font-weight: bold;
   color: #319795;
 }
 .block:hover {
   color: #319795;
+}
+.bookNow-btn:hover{
+  background-color: #174443;
 }
 
 #mobileMenu {
@@ -43,7 +52,7 @@ nav {
 
 /* Hero Section */
 .hero {
-  background-image: url('/Hero.jpg');
+  background-image: url("/Hero.jpg");
   background-size: cover;
   background-position: center;
   position: relative;
@@ -88,14 +97,118 @@ nav {
   text-align: center; /* Center text */
   flex-wrap: nowrap; /* Prevent wrapping on small screens */
 }
+.about-bg {
+  background-color: teal;
+  height: 100vh;
+}
+/* Personnel */
 
+personnelText {
+  color: white;
+  max-width: 100%;
+}
+.personnel-bg {
+  background-color: teal;
+}
+/* Testimonials */
+.swiper-container {
+  padding-bottom: 1rem; /* to add space for pagination */
+  margin-top: 30px;
+  position: relative;
+  overflow: hidden; /* Hide horizontal scrollbar */
+}
+.swiper-pagination {
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: 10px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  color: teal; /* Optional: Set text color */
+}
+
+.swiper-button-next {
+  right: 2px; /* Adjust as needed */
+}
+
+.swiper-button-prev {
+  left: 2px; /* Adjust as needed */
+}
+.swiper-wrapper {
+  display: flex;
+  transition-property: transform; /* Ensure smooth scrolling */
+}
+.swiper-pagination-bullet {
+  background-color: #6d6d6d; /* default pagination bullet color */
+
+}
+.swiper-pagination-bullet-active {
+  background-color: #319795; /* teal color for active bullet */
+}
+.swiper-button-hidden {
+  display: none !important;
+}
+
+/* FAQs */
+.rotate-180{
+  transform: rotate(180deg);
+}
+
+/* Book Now */
+.bookNow-bg{
+  background-color: #319795;
+  padding: 164px;
+}
+.bookNow-Text{
+  color: #319795;
+}
+.bookNow-Text:hover{
+  background-color: #174443;
+  color: white;
+}
+
+/* Footer */
+.footer-bg{
+  background-color: #174443;
+}
+.footer-Text{
+  color: #00F4F4;
+}
+.input-bg{
+  background-color: #174443;
+}
+.name-Text{
+  font-family: 'Alice';
+}
+/* Back To Top */
+#back-to-top {
+  display: none; /* Hidden by default */
+  z-index: 1000; /* Ensure it is above other elements */
+}
+
+#back-to-top.show {
+  display: block; /* Show when the user scrolls down */
+}
+.back-to-top-bg{
+  background-color: #319795;
+  color: white;
+}
+.back-to-top-bg:hover{
+  background-color: #174443;
+}
 /* Media Queries for larger screens */
 @media (min-width: 768px) {
   .hero {
     flex-direction: row; /* Align elements side by side on medium and larger screens */
     padding: 40px;
   }
-  
+
   .hero .herotext {
     margin-left: 0;
     margin-right: 15px;
@@ -110,7 +223,7 @@ nav {
     width: 50%;
     max-width: 100%;
     padding: 30px;
-    display: flex; /* Ensure flexbox is applied */
+    display: flex;
     flex-direction: row; /* Keep items in a row */
     justify-content: space-between; /* Space items evenly */
     flex-wrap: nowrap; /* Prevent wrapping */
@@ -133,17 +246,17 @@ nav {
   .hero {
     padding: 10px; /* Reduce padding */
   }
-  
+
   .hero .herotext {
     padding: 10px; /* Reduce padding */
   }
-  
+
   .hero .statistics {
     margin-top: 10px; /* Reduce margin */
     flex-direction: row; /* Keep items in a row */
     flex-wrap: wrap; /* Allow wrapping on very small screens */
   }
-  
+
   .hero .statistics div {
     margin: 5px; /* Ensure spacing between items */
     flex: 1 1 30%; /* Allow items to grow and shrink */

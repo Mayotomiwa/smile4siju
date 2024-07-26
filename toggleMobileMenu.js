@@ -10,3 +10,4 @@ function toggleMobileMenu() {
         }, 300);
     }
 }
+
