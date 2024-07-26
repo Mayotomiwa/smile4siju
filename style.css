@@ -204,6 +204,10 @@ personnelText {
 }
 /* Media Queries for larger screens */
 @media (min-width: 768px) {
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
   .hero {
     flex-direction: row; /* Align elements side by side on medium and larger screens */
     padding: 40px;
@@ -237,12 +241,20 @@ personnelText {
 }
 
 @media (min-width: 1024px) {
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
   .hero {
     height: 100vh;
   }
 }
 
 @media (max-width: 767px) {
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
   .hero {
     padding: 10px; /* Reduce padding */
   }
